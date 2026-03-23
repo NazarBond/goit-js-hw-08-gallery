@@ -32,7 +32,7 @@ const refs = {
 
 let currentIndex = 0;
 
-// ✅ Рендер галереї
+
 const markup = galleryItems
   .map(
     ({ preview, original, description }) => `
@@ -51,7 +51,7 @@ const markup = galleryItems
 
 refs.gallery.insertAdjacentHTML("beforeend", markup);
 
-// ✅ Клік по галереї
+
 refs.gallery.addEventListener("click", (e) => {
   e.preventDefault();
 
@@ -64,7 +64,7 @@ refs.gallery.addEventListener("click", (e) => {
   openModal(src, e.target.alt);
 });
 
-// ✅ Відкрити модалку
+
 function openModal(src, alt) {
   refs.lightbox.classList.add("is-open");
   refs.image.src = src;
@@ -73,7 +73,7 @@ function openModal(src, alt) {
   window.addEventListener("keydown", handleKeys);
 }
 
-// ✅ Закрити
+
 function closeModal() {
   refs.lightbox.classList.remove("is-open");
   refs.image.src = "";
@@ -85,7 +85,7 @@ function closeModal() {
 refs.closeBtn.addEventListener("click", closeModal);
 refs.overlay.addEventListener("click", closeModal);
 
-// ✅ Клавіші
+
 function handleKeys(e) {
   if (e.code === "Escape") closeModal();
 
